@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main  # Dette er Git-branchen hvor innholdet ditt blir lagret
+
+media_folder: "src/images/uploads"  # Hvor bilder lastes opp
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blogg"
+    label: "Blogginnlegg"
+    folder: "src/blogg"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Tittel", name: "title", widget: "string" }
+      - { label: "Publisert dato", name: "date", widget: "datetime" }
+      - { label: "Kropp", name: "body", widget: "markdown" }
